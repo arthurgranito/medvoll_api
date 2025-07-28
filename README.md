@@ -76,8 +76,8 @@ Uma API REST completa para gerenciamento de sistema médico, desenvolvida com Sp
 
 ### 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-usuario/api-sistema-medico.git
-cd api-sistema-medico
+git clone https://github.com/arthurgranito/vollmed_api.git
+cd vollmed_api
 ```
 
 ### 2. Configure o banco de dados PostgreSQL
@@ -93,9 +93,9 @@ Crie um arquivo `.env` na raiz do projeto ou configure as variáveis de ambiente
 
 ```bash
 # Configurações do banco de dados
-DB_URL=jdbc:postgresql://localhost:5432/vollmed_api
-DB_USERNAME=postgres
-DB_PASSWORD=sua_senha
+DATABASE_URL=jdbc:postgresql://localhost:5432/vollmed_api
+DATABASE_USERNAME=postgres
+DATABASE_PASSWORD=sua_senha
 
 # Chave secreta para JWT (recomendado: gerar uma chave forte)
 JWT_SECRET=sua_chave_secreta_muito_segura
@@ -208,20 +208,6 @@ A documentação completa da API está disponível através do Swagger UI:
 mvn test
 ```
 
-### Executar testes específicos
-```bash
-# Testes de controller
-mvn test -Dtest=ConsultaControllerTest
-
-# Testes de domínio
-mvn test -Dtest=*DomainTest
-```
-
-### Cobertura de testes
-```bash
-mvn jacoco:report
-```
-
 ## 🗄️ Banco de Dados
 
 ### Estrutura das Tabelas
@@ -270,46 +256,10 @@ O projeto utiliza Flyway para gerenciar migrações do banco de dados:
 - `V7__create-table-consulta.sql`
 - `V8__alter-table-consultas-add-column-motivo-cancelamento.sql`
 
-## 🚀 Deploy
-
-### Docker (Recomendado)
-
-```dockerfile
-FROM openjdk:17-jdk-slim
-COPY target/api-0.0.1-SNAPSHOT.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","/app.jar"]
-```
-
-### Build para produção
-```bash
-mvn clean package -DskipTests
-```
-
-## 🤝 Contribuição
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ## 👨‍💻 Autor
 
-**Seu Nome**
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- LinkedIn: [Seu LinkedIn](https://linkedin.com/in/seu-perfil)
-
-## 🙏 Agradecimentos
-
-- Spring Boot Team
-- PostgreSQL Community
-- Alura (curso de Spring Boot)
-
----
+**Arthur Granito**
+- GitHub: [@arthurgranito](https://github.com/seu-usuario)
+- LinkedIn: [Arthur Granito](https://linkedin.com/in/arthurgranito)
 
 ⭐ Se este projeto te ajudou, considere dar uma estrela no repositório! 
